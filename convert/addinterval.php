@@ -51,6 +51,15 @@ class add_interval extends WebDriverTestCase {
       }
       return true;
     },50000);
+
+      $this->waitUntil(function() use ($test) {
+          try {
+              $test->assertEquals("Dashboard", $test->byId("layout")->attribute("data-current_view"));
+          } catch(\Exception $e) {
+              return null;
+          }
+          return true;
+      },50000);
     // clickElement
     $this->byXPath("//*[@id='srates']")->click();
     // clickElement
