@@ -43,14 +43,39 @@ class Do_you_charge_a_clean_up_fee extends WebDriverTestCase {
     // clickElement
     $this->byXPath("//div[@class='form-actions']//button[normalize-space(.)='Login']")->click();
     // waitForCurrentUrl
-    $this->waitUntil(function() use ($test) {
+      $this->waitUntil(function() use ($test) {
+          try {
+              $boolean = ($test->byId("main_menu") instanceof \PHPUnit_Extensions_Selenium2TestCase_Element);
+          } catch (\Exception $e) {
+              $boolean = false;
+          }
+          return $boolean === true ?: null;
+      },50000);
+      // waitForEval
+      $this->waitUntil(function() use ($test) {
+          try {
+              $test->assertEquals("0", $test->execute(array('script' => "return window.$('body > .progress-bar-background:visible').length", 'args' => array())));
+          } catch(\Exception $e) {
+              return null;
+          }
+          return true;
+      },50000);
+      // waitForElementPresent
+      $this->waitUntil(function() use ($test) {
+          try {
+              $boolean = ($test->byCssSelector("#layout[data-current_view=dashboard]") instanceof \PHPUnit_Extensions_Selenium2TestCase_Element);
+          } catch (\Exception $e) {
+              $boolean = false;
+          }
+          return $boolean === true ?: null;
+      },50000);
+      // assertElementPresent
       try {
-        $test->assertEquals("http://wwwdev3.ondeficar.com/connect/366#/dashboard", $test->url());
-      } catch(\Exception $e) {
-        return null;
+          $boolean = ($test->byId("main_menu") instanceof \PHPUnit_Extensions_Selenium2TestCase_Element);
+      } catch (\Exception $e) {
+          $boolean = false;
       }
-      return true;
-    },50000);
+      $test->assertTrue($boolean);
     // clickElement
     $this->byName("arates")->click();
     // clickElement
