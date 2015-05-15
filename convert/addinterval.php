@@ -55,7 +55,7 @@ class add_interval extends WebDriverTestCase {
       // waitForEval
       $this->waitUntil(function() use ($test) {
           try {
-              $test->assertEquals("0", $test->execute("return js=window.$('body > .progress-bar-background:visible').length"));
+              $test->assertEquals("0", $test->execute(array('script' => "return window.$('body > .progress-bar-background:visible').length", 'args' => array())));
           } catch(\Exception $e) {
               return null;
           }
