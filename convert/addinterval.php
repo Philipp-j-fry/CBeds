@@ -54,7 +54,7 @@ class add_interval extends WebDriverTestCase {
     // clickElement
     $this->byName("arates")->click();
     // clickElement
-    $this->byCssSelector("#main_menu #sroomRates")->click();
+    $this->byXPath("//*[@id='sroomRates']/a")->click();
     // waitForElementAttribute
     $this->waitUntil(function() use ($test) {
       try {
