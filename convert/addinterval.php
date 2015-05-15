@@ -61,7 +61,7 @@ class add_interval extends WebDriverTestCase {
           return true;
       },50000);
     // clickElement
-    $this->byXPath("//*[@id='srates']")->click();
+    $this->byXPath("//*[@id='srates']/a")->click();
     // clickElement
     $this->byXPath("//*[@id='sroomRates']/a")->click();
     // waitForElementAttribute
