@@ -43,23 +43,40 @@ class add_interval extends WebDriverTestCase {
     // clickElement
     $this->byXPath("//div[@class='form-actions']//button[normalize-space(.)='Login']")->click();
     // waitForCurrentUrl
-    $this->waitUntil(function() use ($test) {
-      try {
-        $test->assertEquals("http://wwwdev3.ondeficar.com/connect/366#/dashboard", $test->url());
-      } catch(\Exception $e) {
-        return null;
-      }
-      return true;
-    },50000);
-
+      // waitForElementPresent
       $this->waitUntil(function() use ($test) {
           try {
-              $test->assertEquals("Dashboard", $test->byId("layout")->attribute("data-current_view"));
+              $boolean = ($test->byId("main_menu") instanceof \PHPUnit_Extensions_Selenium2TestCase_Element);
+          } catch (\Exception $e) {
+              $boolean = false;
+          }
+          return $boolean === true ?: null;
+      },50000);
+      // waitForEval
+      $this->waitUntil(function() use ($test) {
+          try {
+              $test->assertEquals("0", $test->execute("return js=window.$('body > .progress-bar-background:visible').length"));
           } catch(\Exception $e) {
               return null;
           }
           return true;
       },50000);
+      // waitForElementPresent
+      $this->waitUntil(function() use ($test) {
+          try {
+              $boolean = ($test->byCssSelector("#layout[data-current_view=dashboard]") instanceof \PHPUnit_Extensions_Selenium2TestCase_Element);
+          } catch (\Exception $e) {
+              $boolean = false;
+          }
+          return $boolean === true ?: null;
+      },50000);
+      // assertElementPresent
+      try {
+          $boolean = ($test->byId("main_menu") instanceof \PHPUnit_Extensions_Selenium2TestCase_Element);
+      } catch (\Exception $e) {
+          $boolean = false;
+      }
+      $test->assertTrue($boolean);
     // clickElement
     $this->byXPath("//*[@id='srates']/a")->click();
     // clickElement
