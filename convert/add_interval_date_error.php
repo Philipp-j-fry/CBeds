@@ -55,7 +55,7 @@ class add_interval_date_error extends WebDriverTestCase {
     // clickElement
     $this->byName("arates")->click();
     // clickElement
-    $this->byCssSelector("a[href='#/roomRates']")->click();
+    $this->byCssSelector("#main_menu #sroomRates a")->click();
     // waitForElementAttribute
     $this->waitUntil(function() use ($test) {
       try {

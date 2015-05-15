@@ -54,7 +54,7 @@ class Do_you_charge_for_additional_adults_and_or_children extends WebDriverTestC
     // clickElement
     $this->byName("arates")->click();
     // clickElement
-    $this->byCssSelector("a[href='#/roomRates']")->click();
+      $this->byCssSelector("#main_menu #sroomRates a")->click();
     // waitForElementAttribute
     $this->waitUntil(function() use ($test) {
       try {
