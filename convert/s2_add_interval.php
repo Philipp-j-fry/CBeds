@@ -15,12 +15,12 @@ class s2_add_interval extends WebDriverTestCase {
             )
         ),
         // run Chrome on Linux on Sauce
-        array(
+        /*array(
             'browserName' => 'chrome',
             'desiredCapabilities' => array(
                 'platform' => 'Linux',
             )
-        ),
+        ),*/
     );
   /**
    * Recorded steps.
