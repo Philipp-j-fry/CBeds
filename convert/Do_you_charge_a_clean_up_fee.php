@@ -15,12 +15,12 @@ class Do_you_charge_a_clean_up_fee extends WebDriverTestCase {
             )
         ),
         // run Chrome on Linux on Sauce
-        array(
+        /*array(
             'browserName' => 'chrome',
             'desiredCapabilities' => array(
                 'platform' => 'Linux',
             )
-        ),
+        ),*/
     );
   /**
    * Recorded steps.

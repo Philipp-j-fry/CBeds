@@ -15,12 +15,12 @@ class Do_you_charge_for_additional_adults_and_or_children extends WebDriverTestC
             )
         ),
         // run Chrome on Linux on Sauce
-        array(
+       /* array(
             'browserName' => 'chrome',
             'desiredCapabilities' => array(
                 'platform' => 'Linux',
             )
-        ),
+        ),*/
     );
   /**
    * Recorded steps.
