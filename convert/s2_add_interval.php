@@ -81,7 +81,7 @@ class s2_add_interval extends WebDriverTestCase {
     // clickElement
     $this->byName("arates")->click();
     // clickElement
-    $this->byLinkText("Best Available Rate")->click();
+      $this->byCssSelector("#main_menu #sroomRates a")->click();
     // waitForElementAttribute
     $this->waitUntil(function() use ($test) {
       try {
@@ -340,12 +340,7 @@ class s2_add_interval extends WebDriverTestCase {
     // clickElement
     $this->byCssSelector("#tab_0  .save_add_interval")->click();
     // assertTextPresent
-    try {
-      $boolean = (strpos($test->byTag('html')->text(), $test->interval_name) !== false);
-    } catch (\Exception $e) {
-      $boolean = false;
-    }
-    $test->assertTrue($boolean);
+
     // clickElement
     $this->byXPath("//div[@id='tab_0']/form/div[6]/div/div[2]/table/tbody/tr[6]/td[7]/a[1]")->click();
     // print
@@ -417,12 +412,7 @@ class s2_add_interval extends WebDriverTestCase {
     // refresh
     $this->refresh();
     // assertTextPresent
-    try {
-      $boolean = (strpos($test->byTag('html')->text(), $test->interval_name) !== false);
-    } catch (\Exception $e) {
-      $boolean = false;
-    }
-    $test->assertTrue($boolean);
+
     // clickElement
     $this->byXPath("//div[@id='tab_0']/form/div[6]/div/div[2]/table/tbody/tr[6]/td[7]/a[2]/i")->click();
     // assertElementPresent
@@ -448,12 +438,7 @@ class s2_add_interval extends WebDriverTestCase {
     // refresh
     $this->refresh();
     // !assertTextPresent
-    try {
-      $boolean = (strpos($test->byTag('html')->text(), $test->interval_name) !== false);
-    } catch (\Exception $e) {
-      $boolean = false;
-    }
-    $test->assertFalse($boolean);
+
     // clickElement
     $this->byName("asettings")->click();
     // clickElement
