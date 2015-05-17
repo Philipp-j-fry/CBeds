@@ -101,17 +101,5 @@ class add_iventory_room_error extends WebDriverTestCase {
       }
       return $boolean === true ?: null;
     },50000);
-        $this->byName("asettings")->click();
-        // clickElement
-        $this->byCssSelector("a.logout_link")->click();
-        // waitForElementPresent
-        $this->waitUntil(function() use ($test) {
-            try {
-                $boolean = ($test->byCssSelector("div.login") instanceof \PHPUnit_Extensions_Selenium2TestCase_Element);
-            } catch (\Exception $e) {
-                $boolean = false;
-            }
-            return $boolean === true ?: null;
-        },50000);
     }
 }
