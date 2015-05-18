@@ -81,7 +81,7 @@ class s2_check_checkboxes_for_date_range extends WebDriverTestCase {
     // clickElement
     $this->byName("arates")->click();
     // clickElement
-    $this->byLinkText("Best Available Rate")->click();
+      $this->byCssSelector("#main_menu #sroomRates a")->click();
     // waitForElementAttribute
     $this->waitUntil(function() use ($test) {
       try {
