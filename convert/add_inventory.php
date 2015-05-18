@@ -93,7 +93,9 @@ class add_inventory extends WebDriverTestCase {
     $element->click();
     $element->clear();
     $element->value("10");
-    // clickElement
+        $test->execute(array('script' => "window.Metro.scrollTo(window.$('.saveButtons'), true)", 'args' => array()));
+
+        // clickElement
         $this->byCssSelector(".pull-line-right > .btn.green")->click();
     // waitForText
     $this->waitUntil(function() use ($test) {

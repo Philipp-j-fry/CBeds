@@ -158,7 +158,6 @@ class copy_rates extends WebDriverTestCase {
     // clickElement
    // $this->byCssSelector("a[href='#tab_0']")->click();
     // clickElement
-        $test->execute(array('script' => "window.Metro.scrollTo(window.$('.saveButtons'), true)", 'args' => array()));
 
     $this->byCssSelector(".pull-line-right > .btn.green")->click();
     // waitForEval
