@@ -342,7 +342,8 @@ class s2_add_interval extends WebDriverTestCase {
     // assertTextPresent
 
     // clickElement
-    $this->byXPath("//div[@id='tab_0']/form/div[6]/div/div[2]/table/tbody/tr[6]/td[7]/a[1]")->click();
+    $this->byXPath("//div[@id='tab_0']/form/div[6]/div/div[2]/table/tbody/tr[4]/td[7]/a[1]")->click();
+
     // print
     print $test->interval_name;
     // print
@@ -414,7 +415,7 @@ class s2_add_interval extends WebDriverTestCase {
     // assertTextPresent
 
     // clickElement
-    $this->byXPath("//div[@id='tab_0']/form/div[6]/div/div[2]/table/tbody/tr[6]/td[7]/a[2]/i")->click();
+    $this->byXPath("//div[@id='tab_0']/form/div[6]/div/div[2]/table/tbody/tr[4]/td[7]/a[2]/i")->click();
     // assertElementPresent
     try {
       $boolean = ($test->byId("confirm_delete") instanceof \PHPUnit_Extensions_Selenium2TestCase_Element);

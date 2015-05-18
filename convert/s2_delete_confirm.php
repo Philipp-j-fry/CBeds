@@ -15,12 +15,12 @@ class s2_delete_confirm extends WebDriverTestCase {
             )
         ),
         // run Chrome on Linux on Sauce
-        array(
+       /* array(
             'browserName' => 'chrome',
             'desiredCapabilities' => array(
                 'platform' => 'Linux',
             )
-        ),
+        ),*/
     );
     /**
      * Recorded steps.
@@ -329,9 +329,17 @@ class s2_delete_confirm extends WebDriverTestCase {
         },50000);
     $this->byCssSelector("#confirm_delete > div.modal-footer > a.btn.btn_delete")->click();
 
-    // !assertText
-    $test->assertNotEquals($test->interval_name, $test->byCssSelector("#tab_0 .intervals-table tr:not(.clonable):not(.empty) .interval_name .interval_text")->text());
-    // clickElement
+        try {
+            $boolean = ($test->byCssSelector("#tab_0 .intervals-table tr:not(.clonable):not(.empty) .interval_name .interval_text") instanceof \PHPUnit_Extensions_Selenium2TestCase_Element);
+        } catch (\Exception $e) {
+            $boolean = false;
+        }
+
+        if ($boolean) {
+            // !assertText
+            $test->assertNotEquals($test->interval_name, $test->byCssSelector("#tab_0 .intervals-table tr:not(.clonable):not(.empty) .interval_name .interval_text")->text());
+
+        }  // clickElement
     $this->byName("acustomers")->click();
     // waitForElementPresent
     $this->waitUntil(function() use ($test) {
@@ -352,7 +360,7 @@ class s2_delete_confirm extends WebDriverTestCase {
         return null;
       }
       return true;
-    });
+    },50000);
     // clickElement
     $this->byName("arates")->click();
     // clickElement
@@ -395,12 +403,30 @@ class s2_delete_confirm extends WebDriverTestCase {
       return true;
     },50000);
     // !assertText
-    $test->assertNotEquals($test->interval_name, $test->byCssSelector("#tab_0 .intervals-table tr:not(.clonable):not(.empty) .interval_name .interval_text")->text());
-    // refresh
+        try {
+            $boolean = ($test->byCssSelector("#tab_0 .intervals-table tr:not(.clonable):not(.empty) .interval_name .interval_text") instanceof \PHPUnit_Extensions_Selenium2TestCase_Element);
+        } catch (\Exception $e) {
+            $boolean = false;
+        }
+
+        if ($boolean) {
+            // !assertText
+            $test->assertNotEquals($test->interval_name, $test->byCssSelector("#tab_0 .intervals-table tr:not(.clonable):not(.empty) .interval_name .interval_text")->text());
+
+        }  // clickElement  // refresh
     $this->refresh();
     // !assertText
-    $test->assertNotEquals($test->interval_name, $test->byCssSelector("#tab_0 .intervals-table tr:not(.clonable):not(.empty) .interval_name .interval_text")->text());
-    // clickElement
+        try {
+            $boolean = ($test->byCssSelector("#tab_0 .intervals-table tr:not(.clonable):not(.empty) .interval_name .interval_text") instanceof \PHPUnit_Extensions_Selenium2TestCase_Element);
+        } catch (\Exception $e) {
+            $boolean = false;
+        }
+
+        if ($boolean) {
+            // !assertText
+            $test->assertNotEquals($test->interval_name, $test->byCssSelector("#tab_0 .intervals-table tr:not(.clonable):not(.empty) .interval_name .interval_text")->text());
+
+        }  // clickElement // clickElement
     $this->byCssSelector("a.btn.add_interval")->click();
     // assertElementPresent
     try {
@@ -513,8 +539,17 @@ class s2_delete_confirm extends WebDriverTestCase {
     // refresh
     $this->refresh();
     // !assertText
-    $test->assertNotEquals($test->interval_name, $test->byCssSelector("#tab_0 .intervals-table tr:not(.clonable):not(.empty) .interval_name .interval_text")->text());
-    // clickElement
+        try {
+            $boolean = ($test->byCssSelector("#tab_0 .intervals-table tr:not(.clonable):not(.empty) .interval_name .interval_text") instanceof \PHPUnit_Extensions_Selenium2TestCase_Element);
+        } catch (\Exception $e) {
+            $boolean = false;
+        }
+
+        if ($boolean) {
+            // !assertText
+            $test->assertNotEquals($test->interval_name, $test->byCssSelector("#tab_0 .intervals-table tr:not(.clonable):not(.empty) .interval_name .interval_text")->text());
+
+        }  // clickElement  // clickElement
     $this->byCssSelector("a.btn.add_interval")->click();
     // assertElementPresent
     try {
