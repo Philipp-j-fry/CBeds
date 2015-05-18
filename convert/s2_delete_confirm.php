@@ -384,7 +384,7 @@ class s2_delete_confirm extends WebDriverTestCase {
     // clickElement
     $this->byCssSelector("#confirm_delete > div.modal-footer > a.btn.btn_delete")->click();
     // clickElement
-    $this->byXPath("//div[@class='pull-line-right']//a[.=' Save']")->click();
+        $this->byCssSelector(".pull-line-right > .btn.green")->click();
     // waitForElementAttribute
     $this->waitUntil(function() use ($test) {
       try {
@@ -586,7 +586,7 @@ class s2_delete_confirm extends WebDriverTestCase {
     // clickElement
     $this->byCssSelector("#tab_0  .save_add_interval")->click();
     // clickElement
-    $this->byXPath("//div[@class='pull-line-right']//a[.=' Save']")->click();
+        $this->byCssSelector(".pull-line-right > .btn.green")->click();
     // waitForElementAttribute
     $this->waitUntil(function() use ($test) {
       try {

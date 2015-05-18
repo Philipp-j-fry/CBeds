@@ -94,7 +94,7 @@ class add_inventory extends WebDriverTestCase {
     $element->clear();
     $element->value("10");
     // clickElement
-    $this->byXPath("//div[@class='pull-line-right']/a[1]/i")->click();
+        $this->byCssSelector(".pull-line-right > .btn.green")->click();
     // waitForText
     $this->waitUntil(function() use ($test) {
       try {

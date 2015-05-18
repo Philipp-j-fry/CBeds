@@ -126,7 +126,7 @@ class Do_you_charge_for_additional_adults_and_or_children extends WebDriverTestC
     $element->clear();
     $element->value("98");
     // clickElement
-    $this->byXPath("//div[@class='pull-line-right']//a[.=' Save']")->click();
+      $this->byCssSelector(".pull-line-right > .btn.green")->click();
     // waitForElementAttribute
     $this->waitUntil(function() use ($test) {
       try {
@@ -157,7 +157,7 @@ class Do_you_charge_for_additional_adults_and_or_children extends WebDriverTestC
       $element->click();
     }
     // clickElement
-    $this->byXPath("//div[@class='pull-line-right']//a[.=' Save']")->click();
+      $this->byCssSelector(".pull-line-right > .btn.green")->click();
     // waitForElementAttribute
     $this->waitUntil(function() use ($test) {
       try {

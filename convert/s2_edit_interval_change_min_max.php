@@ -171,7 +171,7 @@ class s2_edit_interval_change_min_max extends WebDriverTestCase {
     // assertText
     $test->assertEquals($test->max_los_new, $test->byCssSelector("#tab_0 .intervals-table tr:not(.clonable):not(.empty)  td.interval_max_los")->text());
     // clickElement
-    $this->byXPath("//div[@class='pull-line-right']//a[.=' Save']")->click();
+      $this->byCssSelector(".pull-line-right > .btn.green")->click();
     // waitForElementAttribute
     $this->waitUntil(function() use ($test) {
       try {
@@ -210,7 +210,7 @@ class s2_edit_interval_change_min_max extends WebDriverTestCase {
     // clickElement
     $this->byCssSelector("#tab_0  .save_add_interval")->click();
     // clickElement
-    $this->byXPath("//div[@class='pull-line-right']//a[.=' Save']")->click();
+      $this->byCssSelector(".pull-line-right > .btn.green")->click();
     // waitForElementAttribute
     $this->waitUntil(function() use ($test) {
       try {

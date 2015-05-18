@@ -100,7 +100,7 @@ class Do_you_charge_a_clean_up_fee extends WebDriverTestCase {
     $element->clear();
     $element->value("40");
     // clickElement
-    $this->byXPath("//div[@class='pull-line-right']//a[.=' Save']")->click();
+      $this->byCssSelector(".pull-line-right > .btn.green")->click();
     // waitForElementAttribute
     $this->waitUntil(function() use ($test) {
       try {
