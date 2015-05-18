@@ -102,6 +102,6 @@ class add_inventory_error_boking_rooms extends WebDriverTestCase {
     },50000);
         $this->byCssSelector("a[name=\"asettings\"] > span.arrow")->click();
         // clickElement
-        $this->byLinkText("Logout")->click();
+        $this->byCssSelector("a.logout_link")->click();
   }
 }
