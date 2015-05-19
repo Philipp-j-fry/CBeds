@@ -139,6 +139,7 @@ class event_canceletion extends WebDriverTestCase {
         $element = $this->byCssSelector("#layout #block-dates-modal textarea[name='reason']");
         $element->click();
         $element->clear();
+
         $element->value("OUT");
 
         $test->byCssSelector("#block-dates-modal #save-blocked-dates")->click();
