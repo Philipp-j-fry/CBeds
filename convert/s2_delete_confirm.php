@@ -225,11 +225,14 @@ class s2_delete_confirm extends WebDriverTestCase {
     // clickElement
     $this->byCssSelector("#tab_0  .save_add_interval")->click();
     // assertElementPresent
+        $this->waitUntil(function() use ($test) {
     try {
       $boolean = ($test->byCssSelector("#rate_interval_overlapped") instanceof \PHPUnit_Extensions_Selenium2TestCase_Element);
     } catch (\Exception $e) {
       $boolean = false;
     }
+            return $boolean === true ?: null;
+        },50000);
     $test->assertTrue($boolean);
     // clickElement
     $this->byCssSelector("#rate_interval_overlapped > div.modal-footer > a.btn.btn_no")->click();
